@@ -1,0 +1,9 @@
+FROM centos:8.2.2004 AS compiler
+RUN yum -y install git
+RUN git clone https://github.com/RedisLabs/redis-cluster-proxy.git
+RUN yum -y install gcc make 
+RUN  cd redis-cluster-proxy && make
+
+FROM centos:8.2.2004
+COPY --from=compiler /redis-cluster-proxy/src/redis-cluster-proxy /usr/local/bin/redis-cluster-proxy
+ENTRYPOINT ["redis-cluster-proxy"]
