@@ -11,5 +11,5 @@ Run redis cluster proxy in docker.
 &ensp;docker run -id --name redis-cluster-proxy-test -p 17777:7777 redis-cluster-proxy 10.222.38.166:6379 10.222.33.161:6379 10.222.10.130:6379  
 
 ### Connect:  
-&ensp;redis-cli -h container_ip 7777  
-&ensp;redis-cli -h host_ip 17777
+&ensp;redis-cli -h container_ip -p 7777  
+&ensp;redis-cli -h host_ip -p 17777
