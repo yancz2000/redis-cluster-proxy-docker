@@ -2,7 +2,7 @@
 Run redis cluster proxy in docker.
 
 Useage:  
-  Port (default: 7777)
+  Port (default: 7777)  
   redis-cluster-proxy [node1_host:node1_port,node2_host:node2_port,...]
   
 Examples:  
